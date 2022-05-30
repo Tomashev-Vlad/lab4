@@ -69,5 +69,33 @@
   </plugin>
 
     </plugins>
+
+  <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
   </build>
+
+ <profiles>
+    <profile>
+      <id>development</id>
+      <properties>
+          <appender-name>CONSOLE</appender-name>
+      </properties>
+    </profile>
+    <profile>
+      <id>file_log</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+          <appender-name>FILE</appender-name>
+      </properties>
+    </profile>
+  </profiles>
+
+
 </project>
